@@ -8,11 +8,13 @@ import 'navigation/app_routes.dart';
 import 'theme/app_theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     MultiBlocProvider(
       providers: [
         BlocProvider<BencanaCubit>(
-          create: (_) => BencanaCubit(),
+          create: (_) => BencanaCubit()..muatPantauan(),
         ),
         BlocProvider<ThemeCubit>(
           create: (_) => ThemeCubit(),
